@@ -12,7 +12,7 @@ Check [terraform](https://github.com/mn3m0nic/terraform-exercises/tree/master/le
 
 
 - [X] Terraform init / AWS plugin install / configure creds / Test;
-- [X] AWS create t2.micro instance with Debian Apache;
+- [X] AWS create t2.micro instance with Debian;
 - [X] Test "terraform plan",  "terraform apply", "terraform destroy"
 
 # Initialization steps
