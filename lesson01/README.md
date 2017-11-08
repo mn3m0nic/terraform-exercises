@@ -6,7 +6,7 @@
 
 # Code
 
-Check terraform dir.
+Check [terraform](https://github.com/mn3m0nic/terraform-exercises/tree/master/lesson01/terraform) dir.
 
 # Agenda
 
@@ -25,7 +25,7 @@ Check terraform dir.
 export TF_VAR_AWS_ACCESS_KEY="KEYDATA"
 export TF_VAR_AWS_SECRET_KEY="SECRETKEYDATA"
 ```
-- 
+- You can skip adding this variables if you have AWS-CLI configured (!)
 
 # Installation with hard core merging repos
 
