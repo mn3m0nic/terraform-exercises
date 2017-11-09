@@ -1,0 +1,22 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_instance.lesson01" [label = "aws_instance.lesson01", shape = "box"]
+		"[root] aws_key_pair.dev" [label = "aws_key_pair.dev", shape = "box"]
+		"[root] aws_security_group.default" [label = "aws_security_group.default", shape = "box"]
+		"[root] provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] aws_instance.lesson01" -> "[root] aws_key_pair.dev"
+		"[root] aws_key_pair.dev" -> "[root] provider.aws"
+		"[root] aws_security_group.default" -> "[root] provider.aws"
+		"[root] meta.count-boundary (count boundary fixup)" -> "[root] aws_instance.lesson01"
+		"[root] meta.count-boundary (count boundary fixup)" -> "[root] aws_security_group.default"
+		"[root] provider.aws (close)" -> "[root] aws_instance.lesson01"
+		"[root] provider.aws (close)" -> "[root] aws_security_group.default"
+		"[root] provisioner.local-exec (close)" -> "[root] aws_instance.lesson01"
+		"[root] root" -> "[root] meta.count-boundary (count boundary fixup)"
+		"[root] root" -> "[root] provider.aws (close)"
+		"[root] root" -> "[root] provisioner.local-exec (close)"
+	}
+}
+
