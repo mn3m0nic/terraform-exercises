@@ -53,27 +53,13 @@ curl 123.123.123.123
 
 ![](https://github.com/mn3m0nic/terraform-exercises/blob/master/lesson02/docs/test.png?raw=true)
 
-# Initialization steps
+## Cleanup
 
-* Check lesson 01 for details about initialization;
-
-# Testing
-
-After everything will be ready to go than login to vagrant machine and test your 
-Terraform temaplate for current task:
+Destroy env and VM:
 
 ```
-make ssh
-cd terraform
-terraform init
-terraform plan
-terraform apply
 terraform destroy
-```
-
-## Destroy VM
-
-```
+^D
 make kill
 ```
 
@@ -83,4 +69,3 @@ make kill
 * [PDO manual](https://secure.php.net/manual/en/book.pdo.php)
 * [MySQL SELECT command](https://dev.mysql.com/doc/refman/5.7/en/select.html)
 * [Terraform documentation](https://www.terraform.io/docs/providers/aws/)
-
