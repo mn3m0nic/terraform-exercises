@@ -5,39 +5,36 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Hello world from Terraform+AWS+PHP+MySQL</title>
+        <style> td, th { border: 1px solid #ddd;    padding: 8px; } </style>
 </head>
 <body>
-<pre>
 <?php
-echo "If you see this PHP works OK.";
 require "config.php";
 try 
 {
   $connection = new PDO("mysql:host=$host", $username, $password, $options);
-  $sql = "SELECT id, name FROM names;";
-  $connection->exec($sql);
-  echo "SQL request OK";
+  $sql = "SELECT id, name FROM test.names;";
 }
 catch(PDOException $error)
 {
   echo $sql . "<br>" . $error->getMessage();
 }
+
+$statement = $connection->prepare($sql);
+$statement->execute();
 $result = $statement->fetchAll();
 if ($result && $statement->rowCount() > 0) 
 { 
-  // open table
-  echo "---------------------------------------";
+        echo "<table><tbody>";
   foreach ($result as $row) 
   {
-    echo "| ".$row["id"]." | ".$row["name"]." |";
+    echo "<tr><td>".$row["id"]."</td><td>".$row["name"]."</td></tr>";
   } 
-  echo "---------------------------------------";
-  // close table
+  echo "</tbody>";
 } 
 else 
 { 
   echo "No data in database yet.";
-  // no results
 }
 ?>
 </pre>
