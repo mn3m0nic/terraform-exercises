@@ -15,17 +15,28 @@ Check [terraform](https://github.com/mn3m0nic/terraform-exercises/tree/master/le
 - [X] AWS create t2.micro instance with Debian;
 - [X] Test "terraform plan",  "terraform apply", "terraform destroy"
 
+# Visual
+
+```bash
+terraform graph
+```
+
+![](https://github.com/mn3m0nic/terraform-exercises/blob/master/lesson01/lesson01.png?raw=true)
+
 # Initialization steps
 
 - Go to [AWS - AMI](https://console.aws.amazon.com/iam/home?#/users/nick?section=security_credentials) and create your new keys for AWS;
 - Check that there are no "/" or "+" char in secret key - if there are this chars - Regenerate key again; Related with [bug](https://github.com/hashicorp/terraform/issues/2972);
 - Put keys data or in config or in Shell variables like this (.bashrc or .envrc to save them):
+- You can skip adding environment variables if you have AWS-CLI configured or if you pass your KEY/SECRET as arguments (not safe);
 
 ```bash
 export TF_VAR_AWS_ACCESS_KEY="KEYDATA"
 export TF_VAR_AWS_SECRET_KEY="SECRETKEYDATA"
 ```
-- You can skip adding this variables if you have AWS-CLI configured (!)
+
+
+
 
 # Installation with hard core merging repos
 
@@ -69,10 +80,11 @@ cd terraform
 terraform init
 terraform plan
 terraform apply
+#(...) Testing
 terraform destroy
 ```
 
-## Destroy VM
+## Destroy everything and VM
 
 ```
 make kill
