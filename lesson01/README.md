@@ -29,7 +29,7 @@ export TF_VAR_AWS_SECRET_KEY="SECRETKEYDATA"
 
 # Installation with hard core merging repos
 
-*(template + variable-data(lesson) + private-data/keys)
+* (template + variable-data(lesson) + private-data/keys)
 
 ```
 D=$(date +"%Y%m%d_%H%M%S")
@@ -58,7 +58,7 @@ make init
 make start
 ```
 
-## Testing
+## Testing terraform environment from VM
 
 After everything will be ready to go than login to vagrant machine and test your 
 Terraform temaplate for current task:
@@ -72,6 +72,11 @@ terraform apply
 terraform destroy
 ```
 
+## Destroy VM
+
+```
+make kill
+```
 
 # Used links:
 
