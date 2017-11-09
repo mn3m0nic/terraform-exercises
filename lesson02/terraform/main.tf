@@ -28,7 +28,7 @@ resource "aws_instance" "lesson02-apache" {
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/bootstrap.sh",
-      "/tmp/bootstrap.sh",
+      "/tmp/bootstrap.sh ${aws_instance.lesson02-mysql.public_ip} ${var.mysqlusername} ${var.mysqlpassword}",
     ]
     connection {
       user = "admin"
@@ -56,7 +56,7 @@ resource "aws_instance" "lesson02-mysql" {
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/bootstrap.sh",
-      "/tmp/bootstrap.sh",
+      "/tmp/bootstrap.sh ${aws_instance.lesson02-mysql.public_ip} ${var.mysqlusername} ${var.mysqlpassword}",
     ]
     connection {
       user = "admin"
