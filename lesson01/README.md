@@ -2,6 +2,7 @@
 
 - In scope of this lesson it will be created simple AWS terraform environment for 1 AWS VM machine with Debian.
 - Before creation action will be checked with "plan";
+- After creation connection via public IP via SSH will be tested;
 - After creation machine will be destroyed;
 
 # Code
@@ -10,10 +11,10 @@ Check [terraform](https://github.com/mn3m0nic/terraform-exercises/tree/master/le
 
 # Agenda
 
-
 - [X] Terraform init / AWS plugin install / configure creds / Test;
 - [X] AWS create t2.micro instance with Debian;
-- [X] Test "terraform plan",  "terraform apply", "terraform destroy"
+- [X] Test commands: "terraform plan",  "terraform apply", "terraform destroy"
+- [X] SSH access test via public IP;
 
 # Visual
 
@@ -34,9 +35,6 @@ terraform graph
 export TF_VAR_AWS_ACCESS_KEY="KEYDATA"
 export TF_VAR_AWS_SECRET_KEY="SECRETKEYDATA"
 ```
-
-
-
 
 # Installation with hard core merging repos
 
