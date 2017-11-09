@@ -13,10 +13,11 @@ Check [terraform](https://github.com/mn3m0nic/terraform-exercises/tree/master/le
 # Agenda
 
 
-- [ ] Terraform init / AWS plugin install / configure creds / Test;
-- [ ] AWS create t2.micro 1-st instance with Debian;
-- [ ] AWS create t2.micro 2-nd instance with Debian;
-- [ ] Test "terraform plan",  "terraform apply", "terraform destroy"
+- [X] Terraform init / AWS plugin install / configure creds / Test;
+- [X] AWS create t2.micro 1-st instance with Debian;
+- [X] AWS create t2.micro 2-nd instance with Debian;
+- [X] Install Apache+PHP on VM1 using Terraform
+- [X] Install MySQL-server on VM2 using Terraform
 - [ ] Create simple PHP code as site engine
 - [ ] Create simple MySQL database to import
 - [ ] Create connection between VM1 and VM2
