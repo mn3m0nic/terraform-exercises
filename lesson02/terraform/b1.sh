@@ -9,7 +9,7 @@ main()
   sudo apt-get install -y php apache2 subversion git php-pdo-mysql
   sudo rm /var/www/html/index.html
   sudo svn export --force https://github.com/mn3m0nic/terraform-exercises/trunk/lesson02/serverdata/php/site-files /var/www/html/
-  chmod 777 /var/www/html
+  sudo chmod 777 /var/www/html
 cat > /var/www/html/config.php << EOF
 <?php
 \$host       = "${mysqlhost}";
@@ -20,7 +20,7 @@ cat > /var/www/html/config.php << EOF
 \$options    = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 ?>
 EOF
-chmod 755 /var/www/html
+sudo chmod 755 /var/www/html
 ## DEBUG
 #env > /tmp/env
 }
