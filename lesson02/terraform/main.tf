@@ -21,13 +21,19 @@ resource "aws_instance" "lesson02-apache" {
   provisioner "file" {
     source      = "b1.sh"
     destination = "/tmp/bootstrap.sh"
+    connection {
+      user = "admin"
+    }
   }
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/bootstrap.sh",
       "/tmp/bootstrap.sh",
     ]
-  }
+    connection {
+      user = "admin"
+    }
+   }
 }
 resource "aws_instance" "lesson02-mysql" {
   ami = "ami-0b0bac64"
@@ -43,11 +49,17 @@ resource "aws_instance" "lesson02-mysql" {
   provisioner "file" {
     source      = "b2.sh"
     destination = "/tmp/bootstrap.sh"
-  }
+    connection {
+      user = "admin"
+    }
+   }
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/bootstrap.sh",
       "/tmp/bootstrap.sh",
     ]
-  }
+    connection {
+      user = "admin"
+    }
+   }
 }
