@@ -28,6 +28,7 @@ resource "aws_instance" "lesson02-apache" {
       "/tmp/bootstrap.sh",
     ]
   }
+}
 resource "aws_instance" "lesson02-mysql" {
   ami = "ami-0b0bac64"
   instance_type = "t2.micro"
