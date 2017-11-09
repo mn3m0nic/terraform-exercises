@@ -9,12 +9,14 @@
 
 Check [terraform](https://github.com/mn3m0nic/terraform-exercises/tree/master/lesson01/terraform) dir.
 
-# Agenda
+# Tasks
 
 - [X] Terraform init / AWS plugin install / configure creds / Test;
-- [X] AWS create t2.micro instance with Debian;
-- [X] Test commands: "terraform plan",  "terraform apply", "terraform destroy"
-- [X] SSH access test via public IP;
+- [X] AWS create 1 VM "t2.micro" instance with Debian 9;
+- [X] terraform plan/apply/show
+- [X] Save public IP in external local file;
+- [X] SSH access test via public IP
+- [X] terraform destroy
 
 # Visual
 
@@ -41,13 +43,15 @@ export TF_VAR_AWS_SECRET_KEY="SECRETKEYDATA"
 * (template + variable-data(lesson) + private-data/keys)
 
 ```
+#!/bin/bash
+## 10-init-all.sh
 D=$(date +"%Y%m%d_%H%M%S")
 OUTDIR="work${D}"
 VL="lesson01"
 PRIVATE_DIR="/home/user/dir-with-private-configs"
 VARDATA_DIR="/home/user/terraform-exercises/${VL}"
 echo "1/4 Cloning Vagrant template AGT..."
-git clone https://github.com/mn3m0nic/vagrant-agt ${OUTDIR}
+svn export https://github.com/mn3m0nic/vagrant-agt/trunk/environment/debian-agt/ ${OUTDIR}
 echo "2/4 Merging with PRIVATE data..."
 rsync -a --exclude '.git*' ${PRIVATE_DIR}/ ${OUTDIR}/
 echo "3/4 Merging with VAR-DATA ${LESSON} data..."
